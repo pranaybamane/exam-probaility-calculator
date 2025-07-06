@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculate Result</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <label for="name">Enter your name:</label>
+    <input type="text" id="name">
+    <button id="calculate">Calculate</button>
+    <p id="result"></p>
+
+    <script>
+        $("#calculate").click(function(){
+            $(this).prop('disabled', true);
+            $(this).text('Calculating');
+
+            setTimeout(function() {
+                $("#calculate").prop('disabled', false);
+                $("#calculate").text('Calculate');
+                $("#result").text('Congrats ' + $("#name").val() + ', you passed!');
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
+
+ᕙ(`▿´)ᕗ 

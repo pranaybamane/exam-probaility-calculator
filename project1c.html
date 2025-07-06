@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exam Result</title>
+    <script>
+        function calculate() {
+            var btn = document.getElementById('calculate');
+            var result = document.getElementById('result');
+            btn.disabled = true;
+            btn.textContent = 'Calculating';
+            setTimeout(function() {
+                var name = document.getElementById('name').value;
+                var resultText = '';
+                if (name.toLowerCase().includes('aditya') || name.toLowerCase().includes('tejas') || name.toLowerCase().includes('omkar') || name.toLowerCase().includes('gauresh') || name.toLowerCase().includes('mansi')) {
+                    resultText = 'The probability of you passing is 100%,\n Congratulation you will pass with flying colors! ≥^.^≤';
+                } else if (name.toLowerCase().includes('shubham') || name.toLowerCase().includes('ramya') || name.toLowerCase().includes('aditi')) {
+                    resultText = 'Congratulations, You will top the exam! (^o^)';
+                } else if (name.toLowerCase().includes('bob') || name.toLowerCase().includes('abhishek') || name.toLowerCase().includes('sainath')) {
+                    resultText = 'The Probability of you passing is 99%, Hope you will pass (ง︡'-'︠)ง';
+                } else if (name.toLowerCase().includes('pranay')) {
+                    resultText = 'it seems you are searching my name, Hope i will pass :)';
+                } else {
+                    resultText = 'Congrats ' + name + ', you will pass';
+                }
+                result.textContent = resultText;
+                btn.disabled = false;
+                btn.textContent = 'Calculate';
+            }, 2000);
+        }
+    </script>
+</head>
+<body>
+    <h1 style="font-size:5vw;", style="background-color:#77ace0">Exam Result Probability calculator</h1>
+    <label for="name", style="font-size:2vw;">Enter your name:</label>
+    <input type="text" id="name" name="name">
+    <button id="calculate" onclick="calculate()">Calculate</button>
+    <p id="result"></p>
+</body>
+</html>

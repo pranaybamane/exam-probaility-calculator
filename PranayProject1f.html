@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Result</title>
+    <script>
+        function calculate() {
+            var btn = document.getElementById('calculate');
+            var result = document.getElementById('result');
+            btn.disabled = true;
+            btn.textContent = 'Calculating';
+            setTimeout(function() {
+                var name = document.getElementById('name').value;
+                var resultText = '';
+                if (name.toLowerCase().includes('tejas') || name.toLowerCase().includes('omkar') || name.toLowerCase().includes('gauresh') || name.toLowerCase().includes('mansi') || name.toLowerCase().includes('janhavi') || name.toLowerCase().includes('shruti')) {
+                    resultText = 'The probability of you passing is 100%,\n Congratulation you will pass with flying colors! ^.^';
+                } else if (name.toLowerCase().includes('aditya') || name.toLowerCase().includes('shubham') || name.toLowerCase().includes('ramya') || name.toLowerCase().includes('aditi')) {
+                    resultText = 'Why are you still searching when you already know you will top the exam -_-,\nCongratulations, You will top the exam! (^o^)';
+                } else if (name.toLowerCase().includes('bob') || name.toLowerCase().includes('abhishek') || name.toLowerCase().includes('sainath')) {
+                    resultText = 'The Probability of you passing is 99%, Hope you will pass :-)';
+                } else if (name.toLowerCase().includes('pranay')) { 
+                    resultText = 'It seems you are searching my name, Hope I will pass :)';
+                } else {
+                    resultText = 'Congrats ' + name + ', you will pass';
+                }
+                result.textContent = resultText;
+                btn.disabled = false;
+                btn.textContent = 'Calculate';
+            }, 2000);
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body style="background-color:rgb(210, 242, 247);">
+    <h1 style="font-size:5vw; background-color:#95c6f7; margin:0cm; border-radius: 25px; text-align: center;">Exam Result Probability calculator</h1>
+    <label class="entername" for="name", style="font-size:2vw;", text-align:center;>Enter your name:</label>
+    <input type="text" id="name" name="name">
+    <button id="calculate" onclick="calculate()">Calculate</button>
+    <p id="result", style="font-size:5vw;"></p>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculate Exam Results</title>
+    <script>
+        function calculate() {
+            var btn = document.getElementById('calculate');
+            var result = document.getElementById('result');
+            btn.disabled = true;
+            btn.textContent = 'Calculating';
+            setTimeout(function() {
+                var name = document.getElementById('name').value;
+                var resultText = '';
+                if (name.toLowerCase() === 'aditya','tejas','omkar','gauresh','mansi') {
+                    resultText = '100%, Congratulation you will pass with flying colors!';
+                } 
+                else if (name.toLowerCase() === 'shubham','ramya','aditi') {
+                    resultText = 'You will top the exam!';
+                } else if (name.toLowerCase() === 'pranay') {
+                    resultText = 'It seems you are searching my name!!, Hope i will pass:)';
+                } else {
+                    resultText = 'Congrats ' + name + ', you will pass';
+                }
+                result.textContent = resultText;
+                btn.disabled = false;
+                btn.textContent = 'Calculate';
+            }, 2000);
+        }
+    </script>
+</head>
+<body>
+    <h1>Exam Results</h1>
+    <label for="name">Enter your name:</label>
+    <input type="text" id="name" name="name">
+    <button id="calculate" onclick="calculate()">Calculate</button>
+    <p id="result"></p>
+</body>
+</html>
